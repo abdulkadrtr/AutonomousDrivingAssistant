@@ -1,0 +1,234 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/tesla/TeslaModel3.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/bmw/BmwX5.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/traffic/protos/ParkingLines.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/range_rover/RangeRoverSportSVR.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/lincoln/LincolnMKZ.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/road/protos/Road.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/humans/pedestrian/protos/Pedestrian.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/buildings/protos/ModernHouse.proto"
+
+WorldInfo {
+  info [
+    "Simulation of Tesla Model 3 that exposes the AckermannDrive ROS 2 interface."
+  ]
+  title "ROS2 simulation of the Tesla car"
+  ERP 0.6
+  basicTimeStep 10
+  lineScale 1
+  contactProperties [
+    ContactProperties {
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+    ContactProperties {
+      material2 "TeslaModel3Wheel"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+      bumpSound ""
+      rollSound ""
+      slideSound ""
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.5269923913111677 -0.5499009103226048 -0.6479876606282773 4.330685493146929
+  position 143.55302004720127 8.511222561694709 33.78362754451833
+  near 1
+  follow "vehicle"
+  followSmoothness 0
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Fog {
+  color 0.38 0.35 0.32
+  visibilityRange 1000
+}
+DEF GROUND Solid {
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 0.8 0.8
+        baseColorMap ImageTexture {
+          url [
+            "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/worlds/textures/ground.jpg"
+          ]
+        }
+        roughness 0.5
+        metalness 0
+        textureTransform TextureTransform {
+          scale 500 500
+        }
+      }
+      geometry DEF GROUND_PLANE Plane {
+        size 2000 2000
+      }
+    }
+  ]
+  boundingObject USE GROUND_PLANE
+  locked TRUE
+}
+Road {
+  translation 138 0 0.1
+  rotation 0 0 1 1.57
+  width 13
+  wayPoints [
+    0 0 0
+    40 0 0
+  ]
+}
+LincolnMKZ {
+  translation 116.14 52.81 0.4
+  rotation 0 0 1 1.5708
+  name "vehicle(4)"
+}
+LincolnMKZ {
+  translation 123.65 52.72 0.4
+  rotation 0 0 1 1.5708
+  name "vehicle(5)"
+}
+LincolnMKZ {
+  translation 143.23 18.48 0.4
+  rotation 0 0 1 1.5708
+  name "vehicle(8)"
+}
+ModernHouse {
+  translation 158.57 43.76 0
+  rotation 0 0 1 -1.5707953071795862
+}
+Wall {
+  translation 122.86 40.22 0
+  rotation 0 0 1 1.5708
+  size 0.2 16 2.4
+}
+Wall {
+  translation 122.86 57.28 0
+  rotation 0 0 1 1.5708
+  name "wall(1)"
+  size 0.2 16 2.4
+}
+Wall {
+  translation 114.76 48.74 0
+  rotation 0 0 -1 -5.307179586466759e-06
+  name "wall(2)"
+  size 0.2 17 2.4
+}
+RangeRoverSportSVR {
+  translation 121.13 44.33 0.4
+  rotation 0 0 1 -1.5707953071795862
+  name "vehicle(3)"
+}
+RangeRoverSportSVR {
+  translation 142.96 29.01 0.4
+  rotation 0 0 1 1.5708
+  name "vehicle(11)"
+}
+RangeRoverSportSVR {
+  translation 121.14 55.35 0.4
+  rotation 0 0 1 -1.5707953071795862
+  name "vehicle(6)"
+}
+ParkingLines {
+  translation 114.86 51.75 0.02
+  numberOfCarParks 6
+  carParkLength 5.2
+  carParkWidth 2.5
+}
+ParkingLines {
+  translation 114.86 40.48 0.02
+  numberOfCarParks 6
+  carParkLength 5.2
+  carParkWidth 2.5
+}
+BmwX5 {
+  translation 116.14 44.6608 0.317
+  rotation 0 0 1 -1.571595307179586
+  name "vehicle(1)"
+}
+BmwX5 {
+  translation 128.66 55.8107 0.4
+  rotation 0 0 1 -1.571595307179586
+  name "vehicle(7)"
+}
+BmwX5 {
+  translation 128.57 44.5516 0.317
+  rotation 0 0 1 -1.571595307179586
+  name "vehicle(2)"
+}
+BmwX5 {
+  translation 143.145 23.9609 0.4
+  rotation 0 0 1 1.57
+  name "vehicle(10)"
+}
+BmwX5 {
+  translation 143.196 7.73961 0.4
+  rotation 0 0 1 1.57
+  name "vehicle(9)"
+}
+TeslaModel3 {
+  translation 143.248 13.1078 0.400134
+  rotation 0 0 1 1.57071
+  controller "<extern>"
+  sensorsSlotFront [
+    Camera {
+      translation -2.12 0 0.93
+      name "camera_on"
+      fieldOfView 1
+      width 360
+      height 240
+      recognition Recognition {
+        occlusion FALSE
+        frameThickness 0
+        segmentation TRUE
+      }
+    }
+    Camera {
+      translation -4.72 -0.00075 0.590039
+      rotation 0.13052500237229192 4.753880086401771e-09 -0.9914450180195132 3.14159
+      name "camera_arka"
+      fieldOfView 1
+      width 360
+      height 240
+      recognition Recognition {
+        occlusion FALSE
+        frameThickness 0
+        segmentation TRUE
+      }
+    }
+    Lidar {
+      name "lidar_on"
+      horizontalResolution 180
+      fieldOfView 3.14
+      numberOfLayers 1
+      maxRange 4
+    }
+    Lidar {
+      translation -2.57 -0.97 0.13
+      rotation 0 0 1 -1.57
+      name "lidar_sag"
+      horizontalResolution 180
+      fieldOfView 3.14
+      numberOfLayers 1
+      maxRange 4
+    }
+    GPS {
+    }
+  ]
+}
+Pedestrian {
+  translation 144.99 39.39 1.58
+  rotation 0 0 1 3.14159
+}
