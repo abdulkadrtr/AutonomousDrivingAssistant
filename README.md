@@ -1,4 +1,7 @@
 # AutonomousDrivingAssistant
+
+[tr-readme](https://github.com/abdulkadrtr/AutonomousDrivingAssistant/blob/main/readme-tr.md)
+
 The vehicle assistant is capable of engaging in verbal communication with you, comprehending your dialogue, and establishing goals for the vehicle.
 ![People (1)](https://user-images.githubusercontent.com/87595266/226173442-ccfb2b4a-7c36-44e5-9443-59911ba8064b.png)
 
